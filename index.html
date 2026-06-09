@@ -16,6 +16,7 @@
 			--surface: #fffdf9;
 			--line: #f2d8d8;
 			--gold: #e7b75f;
+			--program-pdf-url: https://github.com/minet-zambia-insurance-brokers/Minet-Zambia-2026-Program-/releases/latest/download/2026.Minet.Zambia.Program.pdf;
 		}
 
 		* {
@@ -183,7 +184,7 @@
 
 			<a
 				class="download-btn"
-				href="2026.Minet.Zambia.Program.pdf"
+				href="https://github.com/minet-zambia-insurance-brokers/Minet-Zambia-2026-Program-/releases/latest/download/2026.Minet.Zambia.Program.pdf"
 				download
 				aria-label="Download 3rd Annual Minet Pension Conference program PDF"
 			>
@@ -191,7 +192,7 @@
 			</a>
 
 			<p class="hint">
-				Place your PDF in this folder with the filename: 2026.Minet.Zambia.Program.pdf
+				The PDF is hosted in the GitHub release as 2026.Minet.Zambia.Program.pdf
 			</p>
 		</section>
 	</main>
@@ -201,6 +202,11 @@
 			var downloadLink = document.querySelector('.download-btn');
 			if (!downloadLink) {
 				return;
+			}
+
+			var releaseUrl = document.documentElement.style.getPropertyValue('--program-pdf-url').trim();
+			if (releaseUrl) {
+				downloadLink.href = releaseUrl;
 			}
 
 			// Auto-trigger download for users arriving via QR code or direct page open.
